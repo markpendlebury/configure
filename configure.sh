@@ -1,7 +1,8 @@
 #!/bin/bash
 
-currentShell=$(echo $SHELL)
-if (currentShell != '/usr/bin/zsh'); then
+export CURRENTSHELL=$(echo $SHELL)
+
+if (CURRENTSHELL != '/usr/bin/zsh'); then
     echo 'Begin...'
     sudo ./installers/network_mount.sh
     sudo ./installers/install_fontpacks.sh
