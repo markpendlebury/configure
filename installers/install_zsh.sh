@@ -6,7 +6,7 @@ sudo apt update
 # INstall zsh
 sudo apt install zsh -y
 # Change Shell to zsh
-chsh -s (which zsh)
+chsh -s '/usr/bin/zsh'
 # Tell the user we will log out in 5 seconds
 for i in {5..01}
 do
