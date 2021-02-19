@@ -12,6 +12,7 @@ echo -n 'Username: '
 read USERNAME
 echo -n 'Password: '
 read -s PASSWORD
+echo ''
 
 
 printf "username=$USERNAME\npassword=$PASSWORD" > /home/$USERNAME/.smbcredentials
