@@ -1,16 +1,16 @@
 #!/bin/bash
 
-export CURRENTSHELL=$(echo $SHELL)
+CURRENTSHELL=$(echo $SHELL)
+DESIREDSHELL="/usr/bin/zsh"
+if [ $CURRENTSHELL != $DESIREDSHELL ]; then
 
-if (CURRENTSHELL != '/usr/bin/zsh'); then
-    
     # Network
     read -p "Configure Network Shares [y/n]: " -n 1 -r
     echo   
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/network_mount.sh
     fi
-    
+ 
     # Fonts
     read -p "Install patched Fonts [y/n]: " -n 1 -r
     echo    
@@ -24,14 +24,14 @@ if (CURRENTSHELL != '/usr/bin/zsh'); then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_tilix.sh    
     fi
-    
+
     # ZSH
     read -p "Install patched Fonts [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_zsh.sh
     fi
-    
+
 else
     # Oh-My-Zsg
     read -p "Install patched Fonts [y/n]: " -n 1 -r
