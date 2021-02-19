@@ -16,10 +16,10 @@ read -s PASSWORD
 
 printf "username=$USERNAME\npassword=$PASSWORD" > ~/.smbcredentials
 
-sudo printf "//STORAGEIP/media /media/$USER/media  cifs credentials=/home/$USER/.smbcredentials,iocharset=utf8,gid=1000,vers=2.0,uid=1000,file_mode=0777,dir_mode=0777 0 0\n" >> /etc/fstab
-sudo printf "//STORAGEIP/backup /media/$USER/backup  cifs credentials=/home/$USER/.smbcredentials,iocharset=utf8,gid=1000,vers=2.0,uid=1000,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
+sudo printf "//$STORAGEIP/media /media/$USERNAME/media  cifs credentials=/home/$USERNAME/.smbcredentials,iocharset=utf8,gid=1000,vers=2.0,uid=1000,file_mode=0777,dir_mode=0777 0 0\n" >> /etc/fstab
+sudo printf "//$STORAGEIP/backup /media/$USERNAME/backup  cifs credentials=/home/$USERNAME/.smbcredentials,iocharset=utf8,gid=1000,vers=2.0,uid=1000,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab
 
-sudo mkdir /media/$USER/media
-sudo mkdir /media/$USER/backup
+sudo mkdir /media/$USERNAME/media
+sudo mkdir /media/$USERNAME/backup
 
 sudo mount -a
