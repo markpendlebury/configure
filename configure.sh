@@ -5,28 +5,28 @@ DESIREDSHELL="/usr/bin/zsh"
 if [ $CURRENTSHELL != $DESIREDSHELL ]; then
 
     # Network
-    read -p "Configure Network Shares [y/n]: " -n 1 -r
+    read -p "Configure Network Shares? [y/n]: " -n 1 -r
     echo   
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/network_mount.sh
     fi
  
     # Fonts
-    read -p "Install patched Fonts [y/n]: " -n 1 -r
+    read -p "Install patched Fonts? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_fontpacks.sh
     fi
 
     # Tilix
-    read -p "Install patched Fonts [y/n]: " -n 1 -r
+    read -p "Install patched Tilix? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_tilix.sh    
     fi
 
     # ZSH
-    read -p "Install patched Fonts [y/n]: " -n 1 -r
+    read -p "Install patched Zsh? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_zsh.sh
@@ -34,7 +34,7 @@ if [ $CURRENTSHELL != $DESIREDSHELL ]; then
 
 else
     # Oh-My-Zsg
-    read -p "Install patched Fonts [y/n]: " -n 1 -r
+    read -p "Install patched Oh My Zsh? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_oh_my_zsh.sh
