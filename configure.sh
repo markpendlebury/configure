@@ -19,14 +19,14 @@ if [ $CURRENTSHELL != $DESIREDSHELL ]; then
     fi
 
     # Tilix
-    read -p "Install patched Tilix? [y/n]: " -n 1 -r
+    read -p "Install Tilix? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_tilix.sh    
     fi
 
     # ZSH
-    read -p "Install patched Zsh? [y/n]: " -n 1 -r
+    read -p "Install Zsh? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_zsh.sh
@@ -34,7 +34,7 @@ if [ $CURRENTSHELL != $DESIREDSHELL ]; then
 
 else
     # Oh-My-Zsg
-    read -p "Install patched Oh My Zsh? [y/n]: " -n 1 -r
+    read -p "Install Oh My Zsh? [y/n]: " -n 1 -r
     echo    
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo ./installers/install_oh_my_zsh.sh
